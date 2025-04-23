@@ -6,7 +6,7 @@ A full‑stack web application that predicts the best crop for given **temperatu
 |------------|--------------------------------------------------------------|
 | Frontend   | React 18 · Vite · Tailwind CSS · lucide‑react icons          |
 | Backend    | Flask · TensorFlow (pre‑trained Keras model)                 |
-| CI / CD    | Docker · GitHub Actions · Docker Hub                         |
+| CI / CD    | Docker · Docker Hub                         |
 
 ---
 
