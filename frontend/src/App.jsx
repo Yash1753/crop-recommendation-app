@@ -46,7 +46,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center px-4">
-      <div className="w-full max-w-xl bg-blue shadow-xl rounded-2xl p-6 space-y-6">
+      <div className="w-full max-w-xl bg-white shadow-xl rounded-2xl p-6 space-y-6">
         <h1 className="text-2xl font-bold text-green-800">Crop Recommendation System</h1>
         <p className="text-sm text-gray-600">Upload a CSV file with temperature, humidity, and soil moisture to get recommended crops.</p>
 
