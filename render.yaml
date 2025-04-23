@@ -1,26 +1,26 @@
 services:
-  backend:
-    name: backend
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    startCommand: gunicorn app:app --bind 0.0.0.0:5000  # (optional: adjust to your backend)
+  - name: backend
+    type: web
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free
+    autoDeploy: true
+    buildCommand: ""
+    startCommand: gunicorn app:app --bind 0.0.0.0:5000
     envVars:
       - key: PORT
         value: 5000
+
+  - name: frontend
+    type: web
+    env: docker
+    dockerfilePath: frontend/Dockerfile
+    dockerContext: frontend
     plan: free
     autoDeploy: true
-
-  frontend:
-    name: frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    startCommand: serve -s build -l 80  # or whatever your frontend Dockerfile ends with
+    buildCommand: ""
+    startCommand: serve -s build -l 80
     envVars:
       - key: PORT
         value: 80
-    dependsOn:
-      - backend
-    plan: free
-    autoDeploy: true
