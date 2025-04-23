@@ -25,7 +25,7 @@ export default function App() {
     setError("");
 
     try {
-      const response = await fetch("http://https://crop-backend-cscv.onrender.com/predict", {
+      const response = await fetch("https://crop-recommendation-app-backend.onrender.com//predict", {
         method: "POST",
         body: formData,
       });
