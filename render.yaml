@@ -1,16 +1,26 @@
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "5000:5000"
+  - type: web
+    name: crop-backend
+    env: docker
+    repo: https://github.com/Yash1753/crop-recommendation-app
+    dockerfilePath: backend/Dockerfile
+    buildCommand: ""  # Not needed for Docker
+    startCommand: ""  # Optional unless overridden inside Dockerfile
+    plan: free
+    envVars:
+      - key: REGISTRY_USER
+        value: your_registry_username
+      - key: REGISTRY_PASS
+        value: your_registry_password_or_token
+      # Add other backend environment variables here (e.g., DB config, secret keys)
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
+  - type: web
+    name: crop-frontend
+    env: docker
+    repo: https://github.com/Yash1753/crop-recommendation-app
+    dockerfilePath: frontend/Dockerfile
+    buildCommand: ""
+    startCommand: ""
+    plan: free
+    envVars:
+      # Add environment variables for the frontend if needed (like API base URL)
