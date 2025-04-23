@@ -7,7 +7,6 @@ services:
     plan: free
     autoDeploy: true
     buildCommand: ""
-    startCommand: gunicorn app:app --bind 0.0.0.0:5000
     envVars:
       - key: PORT
         value: 5000
@@ -20,7 +19,6 @@ services:
     plan: free
     autoDeploy: true
     buildCommand: ""
-    startCommand: serve -s build -l 80
     envVars:
       - key: PORT
         value: 80
