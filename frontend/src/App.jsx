@@ -6,7 +6,7 @@ export default function App() {
   const [predictions, setPredictions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const url = "https://crop-recommendation-app-backend.onrender.com/"
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
     setPredictions([]);
@@ -78,6 +78,7 @@ export default function App() {
           </div>
         )}
       </div>
+      <div>`Go to this link to activate backend and ML model to start ${url}  and recommendation file u can add either the one present on github repo or ur own acc to syntax given in github repo `</div>
     </div>
   );
 }
