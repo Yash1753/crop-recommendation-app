@@ -17,3 +17,5 @@ A full‑stack web application that predicts the best crop for given **temperatu
 - GitHub Actions automatically builds & pushes **frontend** and **backend** Docker images.
 
 ---
+
+## Enable backend FIrst from -> https://crop-recommendation-app-backend.onrender.com
